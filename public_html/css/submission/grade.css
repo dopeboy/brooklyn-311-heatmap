@@ -1,0 +1,97 @@
+#modal-container
+{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#view-btn-wrapper
+{
+    margin-top: 20px;
+}
+
+.view-btn
+{
+    width: 200px;
+}
+
+#views
+{
+    margin-top: 20px;
+}
+
+.error-warning-zone
+{
+    background-color: black; 
+    color: white;
+        padding-left: 2px;
+}
+
+.error-warning-zone a
+{
+    color: white;
+}
+
+iframe
+{
+    border: 1px solid #ddd;
+    width:100%;
+    height: 100%;
+}
+
+.tooltip-inner 
+{
+    white-space:pre-wrap;
+    max-width: 430px;
+    text-align: left
+}
+
+.annotator-notice-error
+{
+    display: none;
+}
+
+#views
+{
+        height: 450px;
+}
+
+#code-contents
+{
+      
+    height: 450px;
+    overflow-y: scroll;
+    
+}
+
+#deployed-link-tab
+{
+    height: 450px;
+}
+
+form#grade
+{
+    margin-top:20px
+}
+
+
+#grades
+{
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+#grades th.desc
+{
+    width: 15%;
+}
+
+#grades th.content
+{
+    width: 85%;
+}
+
+#comments
+{
+    padding-left: 0px;
+    height: 100px;
+}

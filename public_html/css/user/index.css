@@ -1,0 +1,19 @@
+#tab-holder
+{
+    margin-top: 15px;
+}
+
+th.name
+{
+    width: 33%;
+}
+
+th.email-address
+{
+    width: 33%;
+}
+
+th.join-date
+{
+    width: 33%;
+}

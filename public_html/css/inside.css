@@ -1,0 +1,32 @@
+.row#top
+{
+    padding-top:20px; 
+    padding-bottom: 20px;
+}
+
+#top #header-bar
+{
+    margin-top: 10px;
+}
+
+#top #header-bar h1
+{
+    margin: 0px;
+    margin-top:8px; 
+}
+
+#top #header-bar h1 .pull-right
+{
+    margin-top: -5px;
+}
+
+.nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus,.nav-pills>li>a:hover
+{
+    color: #398bce;
+    background-color: #eee;
+}
+
+textarea
+{
+    margin-bottom: 0px;
+}

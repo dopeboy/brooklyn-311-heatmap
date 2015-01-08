@@ -1,0 +1,23 @@
+-- Create user and DB
+create user '311stageuser'@'localhost' identified by 'dumbo';
+create database 311_staging_db;
+grant SELECT, INSERT, UPDATE on 311_staging_db.* to '311stageuser'@'localhost' IDENTIFIED BY 'dumbo';
+
+-- Load db
+cat sql/create.sql sql/base_data.sql sql/views.sql sql/index.sql sql/test_data.sql | mysql -u root 311_staging_db
+
+-- Load 311 data
+LOAD DATA LOCAL INFILE '/home/manish/Work/311-heatmap/311_bk_2014.csv' INTO TABLE COMPLAINT
+  FIELDS TERMINATED BY ',' ENCLOSED BY '"'
+  LINES TERMINATED BY '\n'
+  IGNORE 1 LINES
+(id, @crd, @cld, agency, type, description, city, @dd, lat, lng)
+SET CREATE_DATE	 = STR_TO_DATE(@crd, '%m/%d/%Y %h:%i:%s %p'),
+CLOSED_DATE	 = STR_TO_DATE(@cld, '%m/%d/%Y %h:%i:%s %p'),
+DUE_DATE	 = STR_TO_DATE(@dd, '%m/%d/%Y %h:%i:%s %p');
+
+-- Create a conf file, put it in sites-enabled and call it 311.conf
+
+-- Enable the apache site
+sudo a2ensite 311
+sudo /etc/init.d/apache2 restart

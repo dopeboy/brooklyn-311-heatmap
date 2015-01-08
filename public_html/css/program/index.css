@@ -1,0 +1,25 @@
+
+th.name
+{
+    width: 25%;
+}
+
+th.school
+{
+    width: 15%;
+}
+
+th.start-date
+{
+    width: 25%;
+}
+
+th.end-date
+{
+    width: 25%;
+}
+
+th.actions
+{
+    width: 10%;
+}

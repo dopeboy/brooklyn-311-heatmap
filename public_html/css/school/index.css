@@ -1,0 +1,46 @@
+
+th.name
+{
+    width: 20%;
+}
+
+th.address
+{
+    width: 15%;
+}
+
+th.city
+{
+    width: 10%;
+}
+
+th.state
+{
+    width: 5%;
+}
+
+th.zipcode
+{
+    width: 5%;
+}
+
+th.phone-number
+{
+    width: 10%;
+}
+
+th.website
+{
+    width: 15%;
+}
+
+th.calendar
+{
+    width: 10%;
+}
+
+
+th.actions
+{
+    width: 20%;
+}

@@ -1,0 +1,23 @@
+<Files ../common.inc>
+    Order allow,deny
+    Deny from all
+</Files>
+
+Options +FollowSymLinks
+Options -Indexes
+RewriteEngine on
+
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d [OR]
+RewriteCond %{REQUEST_FILENAME} -l
+RewriteRule ^.*$ - [NC,L]
+
+# The main rule
+RewriteRule ^([a-zA-Z_]*)/?([a-zA-Z]*)?/?([a-zA-Z0-9]*)?/?([0-9]*)?/?$ index.php?controller=$1&action=$2&id=$3&state=$4 [NC,L,QSA]
+
+php_value upload_max_filesize 10M
+php_value post_max_size 20M
+php_value memory_limit 256M
+php_value max_execution_time 60
+
+php_value date.timezone 'America/New_York'

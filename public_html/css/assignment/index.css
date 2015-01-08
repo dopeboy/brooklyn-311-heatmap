@@ -1,0 +1,24 @@
+th.name
+{
+    width: 48%;
+}
+
+th.email-address
+{
+    width: 15%;
+}
+
+th.join-date
+{
+    width: 15%;
+}
+
+th.submission-count
+{
+    width: 10%;
+}
+
+th.action
+{
+    width: 12%;
+}

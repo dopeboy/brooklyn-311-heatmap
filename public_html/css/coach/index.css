@@ -1,0 +1,31 @@
+
+th.name
+{
+    width: 30%;
+}
+
+th.email-address
+{
+    width: 20%;
+}
+
+th.phone-number
+{
+    width: 10%;
+}
+
+th.school
+{
+    width: 20%;
+}
+
+th.weekly-reports
+{
+    width: 10%;
+}
+
+
+th.actions
+{
+    width: 10%;
+}
