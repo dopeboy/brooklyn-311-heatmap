@@ -28,6 +28,17 @@ abstract class Model
         $this->dbh = null;
     }
 
+    public function checkAPIKey($key) 
+    {
+		$sqlParameters[":key"] = $key;
+
+        $preparedStatement = $this->dbh->prepare('SELECT 1 FROM API_KEY WHERE KEY_VALUE=:key LIMIT 1');
+        $preparedStatement->execute($sqlParameters);     
+        
+      	if ($preparedStatement->fetch() == null)
+			throw new InvalidAPIKey();
+    }
+
     public function hashPassword($username, $password)
     {
         $salt = hash('sha256', uniqid(mt_rand(), true) . 'stokedplus' . strtolower($username));

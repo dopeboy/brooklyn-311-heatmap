@@ -18,7 +18,7 @@ abstract class BaseException extends Exception
     
     public function printMe($request_method)
     {
-        if ($request_method == Method::GET)
+        /*if ($request_method == Method::GET)
         {
             $output = "##### START OF EXCEPTION ####";
             $output .= "<pre>" . print_r(json_decode($this->json),true) . "</pre>";
@@ -26,7 +26,7 @@ abstract class BaseException extends Exception
             return $output;        
         }
         
-        else
+        else*/
             return $this->json;
     }
 }
@@ -202,5 +202,22 @@ class InsufficientPermissionsError extends BaseException
         parent::__construct("You do not have sufficient permissions to access this website.",  $previous);
     }
 }
+
+class NoAPIKeySpecified extends BaseException
+{
+    public function __construct(Exception $previous = null)
+    {
+        parent::__construct("You did not specify an API key.",  $previous);
+    }
+}
+
+class InvalidAPIKey extends BaseException
+{
+    public function __construct(Exception $previous = null)
+    {
+        parent::__construct("This API key is invalid.",  $previous);
+    }
+}
+
 
 ?>

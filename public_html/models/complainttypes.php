@@ -4,6 +4,9 @@ class ComplaintTypesModel extends Model
 {
 	public function getComplaintTypes($key, $limit)
 	{
+		// Check API key
+		$this->checkAPIKey($key);
+
 		$sqlParameters = array();
 
 		if ($limit == null)

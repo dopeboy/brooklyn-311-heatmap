@@ -1,5 +1,8 @@
 // You will perform all your work in this file. 
 
+// PASTE YOUR API KEY HERE
+var api_key = "54af096449d8d";
+
 /************** TASK 1 **************/  
 //  
 // This function should get the whole set of complaint data from the server and then 
@@ -14,7 +17,7 @@
 function getComplaintData()
 {
 	var complaintData = [];
-	$.getJSON("http://clownfish.io/complaints/get?apikey=123", processComplaints);
+	$.getJSON("http://clownfish.io/complaints/get?apikey=" + api_key, processComplaints);
 
 	function processComplaints(data)
 	{
@@ -38,7 +41,7 @@ function getComplaintData()
 //    each complaint type and stuff it in the dropdown menu. 
 function populateComplaintTypeMenu()
 {
-	$.getJSON("http://localhost/complainttypes/get?apikey=123", processComplaintTypes);
+	$.getJSON("http://clownfish.io/complainttypes/get?apikey=" + api_key, processComplaintTypes);
 
 	function processComplaintTypes(data)
 	{
@@ -66,7 +69,7 @@ $(document).ready(function()
 	$("#complaint-type-menu").change(function()
 	{
 		var complaintData = [];
-		$.getJSON("http://localhost/complaints/get?apikey=123&complaint-type=" + $("#complaint-type-menu option:selected").val(), processComplaints);
+		$.getJSON("http://clownfish.io/complaints/get?apikey="  + api_key + "&complaint-type=" + $("#complaint-type-menu option:selected").val(), processComplaints);
 
 		function processComplaints(data)
 		{

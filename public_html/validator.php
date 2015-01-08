@@ -8,7 +8,7 @@ abstract class Validator
             throw new RequiredParameterMissingException($parameter_name);    
             
         else if ($parameter_value == null || $parameter_value == '') 
-            throw new RequiredParameterMissingException($parameter_name);       
+            throw new NoAPIKeySpecified();       
     }
 
     static function isValidDropdownValue ($parameter_value,$parameter_name)

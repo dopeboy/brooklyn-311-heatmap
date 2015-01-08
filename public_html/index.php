@@ -65,16 +65,7 @@
         if (get_class($exception) == "UserNotLoggedInException" && $request_method == Method::GET)
             header('Location: /user/login/null/100?return=' . $_SERVER['REQUEST_URI']);
 
-        else if (get_parent_class($exception) == "BaseException" && $request_method == Method::GET)
-        {         
-            error_log($exception->printMe($request_method));
-            $viewmodel["EXCEPTION"] = $exception;
-            $viewmodel["REQUEST_METHOD"] = $request_method;
-            $viewloc = 'views/error.php';
-            require('views/naked.php');
-        }
-
-        else if (get_parent_class($exception) == "BaseException" && $request_method == Method::POST)
+        else if (get_parent_class($exception) == "BaseException")
         {
             error_log($exception->printMe($request_method));
             echo $exception->printMe($request_method);

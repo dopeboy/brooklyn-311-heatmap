@@ -4,6 +4,9 @@ class AgenciesModel extends Model
 {
 	public function getAgencies($key, $limit)
 	{
+		// Check API key
+		$this->checkAPIKey($key);
+
 		$sqlParameters = array();
 
 		if ($limit == null)
