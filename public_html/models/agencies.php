@@ -17,6 +17,9 @@ class AgenciesModel extends Model
         $preparedStatement = $this->dbh->prepare('SELECT DISTINCT AGENCY FROM COMPLAINT ORDER BY AGENCY LIMIT :limit');
         $preparedStatement->execute($sqlParameters);     
         
+		// Update count
+		$this->updateRequestCount($key);
+
         return $preparedStatement->fetchAll(PDO::FETCH_ASSOC);
 	}    
 

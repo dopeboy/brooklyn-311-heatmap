@@ -20,6 +20,12 @@ class Keys extends Controller
 		else if ($this->state == 2)
 			$this->returnView(null,"naked.php");
     }       
+
+    protected function requests()
+    {
+		$data = $this->keys_model->getRequests();
+        $this->returnView($data, "naked.php");
+    }  
 }
 
 ?>

@@ -1,6 +1,6 @@
 // You will perform all your work in this file. 
 
-// PASTE YOUR API KEY HERE
+// Paste your API key here
 var api_key = "54af01f3afe4e";
 
 /************** TASK 1 **************/  

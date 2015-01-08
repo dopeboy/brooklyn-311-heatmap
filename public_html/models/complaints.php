@@ -33,6 +33,9 @@ class ComplaintsModel extends Model
         $preparedStatement = $this->dbh->prepare('SELECT * FROM COMPLAINT WHERE 1=1 ' . $query . ' AND CREATE_DATE > "2014-12-01"' . $limit_query);
         $preparedStatement->execute($sqlParameters);     
         
+		// Update count
+		$this->updateRequestCount($key);
+
         return $preparedStatement->fetchAll(PDO::FETCH_ASSOC);
 	}    
 }

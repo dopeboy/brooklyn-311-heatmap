@@ -12,6 +12,14 @@ class KeysModel extends Model
 
 		return $sqlParameters[":key"];
     }  	
+
+	public function getRequests()
+	{
+        $preparedStatement = $this->dbh->prepare('SELECT * FROM API_KEY ORDER BY REQUESTS DESC');
+        $preparedStatement->execute($sqlParameters);     
+
+        return $preparedStatement->fetchAll(PDO::FETCH_ASSOC);
+	}
 }
 
 ?>

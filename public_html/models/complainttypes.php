@@ -17,6 +17,9 @@ class ComplaintTypesModel extends Model
         $preparedStatement = $this->dbh->prepare('SELECT DISTINCT TYPE FROM COMPLAINT ORDER BY TYPE LIMIT :limit');
         $preparedStatement->execute($sqlParameters);     
         
+		// Update count
+		$this->updateRequestCount($key);
+
         return $preparedStatement->fetchAll(PDO::FETCH_ASSOC);
 	}    
 }

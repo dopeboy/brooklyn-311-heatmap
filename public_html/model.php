@@ -39,6 +39,14 @@ abstract class Model
 			throw new InvalidAPIKey();
     }
 
+    public function updateRequestCount($key) 
+    {
+		$sqlParameters[":key"] = $key;
+
+        $preparedStatement = $this->dbh->prepare('UPDATE API_KEY SET REQUESTS=REQUESTS+1 WHERE KEY_VALUE=:key');
+        $preparedStatement->execute($sqlParameters);     
+    }
+
     public function hashPassword($username, $password)
     {
         $salt = hash('sha256', uniqid(mt_rand(), true) . 'stokedplus' . strtolower($username));

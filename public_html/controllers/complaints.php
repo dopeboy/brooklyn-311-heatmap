@@ -13,7 +13,7 @@ class Complaints extends Controller
         );
 
         $this->returnView(json_encode($data), "plain.php");
-    }      
+    }     
 }
 
 ?>
