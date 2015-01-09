@@ -16,7 +16,7 @@ class KeysModel extends Model
 	public function getRequests()
 	{
         $preparedStatement = $this->dbh->prepare('SELECT * FROM API_KEY ORDER BY REQUESTS DESC');
-        $preparedStatement->execute($sqlParameters);     
+        $preparedStatement->execute();     
 
         return $preparedStatement->fetchAll(PDO::FETCH_ASSOC);
 	}

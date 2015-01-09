@@ -2,7 +2,7 @@
 
 class ComplaintsModel extends Model 
 {
-	public function getComplaints($key, $type,$agency, $limit)
+	public function getComplaints($key, $type,$agency, $descriptor, $limit)
 	{
 		// Check API key
 		$this->checkAPIKey($key);
@@ -21,6 +21,12 @@ class ComplaintsModel extends Model
 		{
 			$sqlParameters[":agency"] = $agency;
 			$query .= " AND AGENCY = :agency ";			
+		}
+
+		if ($descriptor != null)
+		{
+			$sqlParameters[":descriptor"] = $descriptor;
+			$query .= " AND LOWER(DESCRIPTION) LIKE %:descriptor% ";			
 		}
 
 		if ($limit != null)

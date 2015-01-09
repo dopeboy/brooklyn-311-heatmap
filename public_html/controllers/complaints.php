@@ -9,6 +9,7 @@ class Complaints extends Controller
             $this->validateParameter($this->urlvalues['apikey'],"API Key",array('Validator::isNotNullAndNotEmpty')),
             $this->validateParameter($this->urlvalues['complaint-type'],"Complaint type",array()),         
             $this->validateParameter($this->urlvalues['agency'],"Agency",array()),    
+            $this->validateParameter($this->urlvalues['descriptor'],"Descriptor",array()),
        		$this->validateParameter($this->urlvalues['limit'],"Limit",array())         
         );
 
